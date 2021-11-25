@@ -1,0 +1,32 @@
+<div class="row">
+
+<!--Dudas: tutotial no. 11 de fazt-->
+    {{#each products}}
+
+    <div class="card" style="width: 18rem;">
+        <img src="https://i.ytimg.com/vi/nimkuj47yZk/maxresdefault.jpg">
+        <div class="card-body">
+            <h5 class="card-title">"{ title }"</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">"{ price }"</li>
+            </ul>
+           
+                <button type="submit" class="btn btn-primary">Submit</button>
+         
+            
+            <a href="'/products/edit/{{_id}}" class="btn btn-primary">Ver mas</a>
+            <a href="'/products/edit/{{_id}}" class="btn btn-primary">Ver mas</a>
+
+            <form action="/products/delete/{{_id}}" method="post">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            
+        </div>
+    </div>
+
+    {{/each }}
+
+
+</div>

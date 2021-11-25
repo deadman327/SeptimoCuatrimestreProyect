@@ -1,0 +1,40 @@
+<div class="col-md-8 justify-content-center align-items-center">
+    <div class="div card">
+        <div class="card-header">
+            <h3>Que vas a vender hoy?</h3>
+        </div>
+        <div class="card-body">
+            <form action="/products/new-prod" method="post" autofocus>
+                <div class="mb-3">
+                    <label for="" class="form-label">Nombre del producto</label>
+                    <input type="text" class="form-control" name="product_name" placeholder="Que vas a vender?">
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="form-label">Precio del producto</label>
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="text" class="form-control" name="product_price"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                           >
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="form-label">Descripcion del producto</label>
+                    <textarea class="form-control" name="product_description" rows="4"
+                        placeholder="Una bonita cosa en venta que seguro alguien va a compar  :)"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="form-label">URL fotos</label>
+                    <textarea class="form-control" name="URLimage" placeholder="URL Imagen"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+
+</div>
