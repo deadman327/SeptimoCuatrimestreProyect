@@ -1,3 +1,4 @@
+/*
 const router = require('express').Router()
 const Product = require('../models/product')
 
@@ -33,3 +34,4 @@ router.post('/products', async (req, res) =>{
 // DELETE request - eliminar un producto
 
 module.exports = router
+*/
