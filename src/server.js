@@ -9,7 +9,10 @@ const app = express();
 
 
 // Settings
+
+// Procesa y envia a Index.js el puerto para poder conectarse al localhost o host
 app.set('port', process.env.PORT || 4000);
+
 app.set('views', path.join(__dirname, 'views'));
 
 

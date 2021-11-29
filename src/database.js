@@ -31,10 +31,11 @@ const { compareSync } = require('bcryptjs');
 //app.use('/api', productRoutes)
 
 // GET - Recibir data del servidor
+/*
 app.get('/', (req,res) => {
     res.json("Hola mundo")
 })
-
+*/
 // POST - Enviar data del frontend al backend
 app.post('/', (req,res) => {
     let user = new User()
@@ -51,10 +52,12 @@ app.post('/', (req,res) => {
     })
 })
 
-app.listen(3000, (err) => {
+/*
+app.listen(4000, (err) => {
     if(err){
         console.log(err)
     } else {
-        console.log("Listening on the PORT", 3000)
+        console.log("Listening on the PORT", 4000)
     }
 })
+*/
