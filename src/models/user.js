@@ -18,7 +18,7 @@ UserSchema.methods.encryPassword = async password =>{
 };
 
 // Comparativo de contraseña
-UserSchema.methods.mathPassword = password =>{
+UserSchema.methods.mathPassword = async password =>{
     return await bcrypt.compare(password, this.password)
 };
 
