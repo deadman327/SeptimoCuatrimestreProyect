@@ -1,25 +1,87 @@
-<h3>Tienda Online</h3>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni facere provident minus aperiam voluptates nemo
-    corrupti impedit consequuntur quod quidem.</p>
-
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque id eum pariatur. Non expedita dicta delectus magni
-    dolorem, error sint.</p>
-
-
-
-    <div class="card" style="width: 18rem;">
-        <img src="https://i.ytimg.com/vi/nimkuj47yZk/maxresdefault.jpg">
-        <div class="card-body">
-            <h5 class="card-title">"{ title }"</h5>
-
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">"{ price }"</li>
-            </ul>
-            <form action="/products/delete/{{_id}}" method="post">
-            <a href="/" class="btn btn-primary">Editar</a>
-                <button type="submit" class="btn btn-danger">Borrar</button>
-            </form>
+<section class="main">
+    <!--Background in Css component-->
+    <div class="container py-5">
+        <div class="row py-5">
+            <div class="col-lg-7 text-center py-5">
+                <h1>Bienvenido</h1>
+                <p>Listo para encontrar algo que necesitas?</p>
+            </div>
         </div>
-    </div> 
+    </div>
+</section>
+
+
+<section class="new">
+    <div class="container py-4">
+        <div class="row pt-5">
+            <div class="col-lg-7 m-auto">
+                <div class="row text-center">
+                    <div class="col-lg-4">
+                        <img src="https://freeiconshop.com/wp-content/uploads/edd/like-outline.png" alt=""
+                            class="mainIcon img-luid">
+                        <h6 class="pt-3">Bueno</h6>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://freeiconshop.com/wp-content/uploads/edd/badge-outline.png" alt=""
+                            class="mainIcon img-luid">
+                        <h6 class="pt-3">Bonito</h6>
+                    </div>
+                    <div class="col-lg-4">
+                        <img src="https://image.flaticon.com/icons/png/512/16/16635.png" alt=""
+                            class="mainIcon img-luid">
+                        <h6 class="pt-3">Barato</h6>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="container p-5">
+
+    <div class="">
+        <p class="h1">Encuentra un monton de productos buscando en nuestras diferentes categorias</p>
+    </div>
+
+    <hr>
+
+    <p class="h5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni facere provident minus aperiam
+        voluptates nemo
+        corrupti impedit consequuntur quod quidem. <br> <br>
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque id eum pariatur. Non expedita dicta delectus
+        magni
+        dolorem, error sint.</p>
+
+    <div class="container p-3 ma-3 align-center d-flex flex-wrap">
+        <div class="card" style="width: 18rem;">
+            <img src="https://i.ytimg.com/vi/nimkuj47yZk/maxresdefault.jpg">
+            <div class="card-body">
+                <h5 class="card-title">"{ title }"</h5>
+
+                <h4 class="card-title">"{price }"</h4>
+
+                <a href="/" class="btn btn-primary">Ver mas</a>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("myInput");
+        if (x.type === "password") {
+            x.type = "text";
+        } else {
+            x.type = "password";
+        }
+    }
+</script>
