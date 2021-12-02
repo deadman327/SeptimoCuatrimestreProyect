@@ -2,7 +2,8 @@ const Product = require('../models/product')
 
 const productCtrl = {};
 
-productCtrl.renderProductForm = (req,res) => {
+productCtrl.renderProductForm = async (req,res) => {
+    res.send('render product');
     res.render('products/add-prod');
 };
 
@@ -33,13 +34,39 @@ productCtrl.createNewProduct = async (req,res) => {
 };
 
 
-productCtrl.renderProduct = (req,res) => {
-    res.send('render product');
+productCtrl.renderProduct = async (req,res) => {
+    try {
+        let products = await Product.find()
+
+        res.json({
+            success: true,
+            products
+        })
+    } catch (err){
+        res.status(500).jsoon({
+            success: false,
+            message: err.message
+        })
+    }
+    //res.send('render product');
 };
 
 
-productCtrl.renderEditForm = (req,res) => {
-    res.send('render edit product');
+productCtrl.renderEditForm = async (req,res) => {
+    try {
+        let products = await Product.findOne( {_id: req.params.id} )
+
+        res.json({
+            success: true,
+            products
+        })
+    } catch (err){
+        res.status(500).jsoon({
+            success: false,
+            message: err.message
+        })
+    }
+    //res.send('render edit product');
 };
 
 productCtrl.updateProduct = (req,res) => {
