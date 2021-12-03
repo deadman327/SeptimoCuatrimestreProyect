@@ -2,6 +2,14 @@ const User = require('../models/user')
 
 const userCtrl = {}
 
+userCtrl.loginUser = (req, res) =>{
+    res.render('user/login')
+}
+
+userCtrl.singinUser = (req, res) =>{
+    res.render('user/singin')
+}
+
 userCtrl.createUser = (req,res) => {
     let user = new User()
     user.name = req.body.name
