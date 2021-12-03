@@ -1,9 +1,7 @@
-<div class="row">
-
-<!--Dudas: tutotial no. 11 de fazt-->
+<div class="container ma-4 p-5  align-center d-flex flex-wrap justify-content-around">
+     <!--Dudas: tutotial no. 11 de fazt-->
     {{#each products}}
-
-    <div class="card" style="width: 18rem;">
+    <div class="card my-2" style="width: 18rem;">
         <img src="https://i.ytimg.com/vi/nimkuj47yZk/maxresdefault.jpg">
         <div class="card-body">
             <h5 class="card-title">"{ title }"</h5>
@@ -12,21 +10,14 @@
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">"{ price }"</li>
             </ul>
-           
-                <button type="submit" class="btn btn-primary">Submit</button>
-         
-            
-            <a href="'/products/edit/{{_id}}" class="btn btn-primary">Ver mas</a>
-            <a href="'/products/edit/{{_id}}" class="btn btn-primary">Ver mas</a>
 
-            <form action="/products/delete/{{_id}}" method="post">
-                <button type="submit" class="btn btn-primary">Submit</button>
+
+            <form action="/products/delete/{{_id}}?_method=DELETE" method="DELETE">
+                <a href="/products/edit/{{_id}}" class="btn btn-primary">Editar</a>
+                <input type="hidden" name="_method" value="DELETE">
+                <button type="submit" class="btn bg-danger btn-block text-white">Borrar</button>
             </form>
-            
         </div>
     </div>
-
-    {{/each }}
-
-
+     {{/each }}
 </div>
