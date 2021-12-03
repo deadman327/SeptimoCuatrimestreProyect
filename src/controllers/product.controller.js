@@ -14,6 +14,7 @@ productCtrl.createNewProduct = async (req,res) => {
         
         product.title = req.body.title
         product.description = req.body.description
+        product.price = req.body.price
         product.photo = req.file.location
         product.stockQuantity = req.body.stockQuantity
         
@@ -40,7 +41,7 @@ productCtrl.renderProduct = async (req,res) => {
     /*
     try {
         let products = await Product.find()
-
+        
         res.json({
             success: true,
             products
@@ -53,6 +54,16 @@ productCtrl.renderProduct = async (req,res) => {
     }
     //res.send('render product');
     */
+};
+
+productCtrl.renderProductIndex = () => {
+
+    try {
+        let products = Product.find()
+        return products
+    } catch (err){
+        return err.message
+    }
 };
 
 
