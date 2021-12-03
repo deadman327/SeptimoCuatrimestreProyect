@@ -10,21 +10,25 @@
                 <div class="col-lg-7 px-5 mt-5">
                     <p class="h1 font-weight-bold py-3">Bienvenido</p>
                     <p class="h4">Ingresa a tu cuenta</p>
-                    <form>
+                    <form action="/user/login" method="POST">
                         <div class="form-row">
                             <div class="col-lg-7">
+
                                 <input type="email" placeholder="Correo electronico" class="form-control my-3 p-3">
+
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
+
                                 <input type="password" placeholder="Password" class="form-control my-3 p-3 " id="myInput">
                                    <input type="checkbox" onclick="myFunction()"> Mostrar contraseña
+
                             </div>
                         </div>
                         <div class="form-row align-content-center">
                             <div class="col-lg-7">
-                                <button type="button" class="btn btn-primary btn-lg btn-block my-3">Login</button>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block my-3">Login</button>
                             </div>
                         </div>
                         <p>Aun no tienes una cuenta? <a href="/user/singup">Registrate aqui</a> </p>

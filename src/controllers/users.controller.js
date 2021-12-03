@@ -1,28 +1,50 @@
-const User = require('../models/user')
+//const user = require('../models/user');
+const User = require('../models/user');
+const passport = require('passport');
 
 const userCtrl = {}
 
+// Form
 userCtrl.loginUser = (req, res) =>{
     res.render('user/login')
-}
+};
 
-userCtrl.singinUser = (req, res) =>{
-    res.render('user/singin')
-}
+// Registrarse form
+userCtrl.singinUser = passport.authenticate('local',{
+    failureRedirect: 'login',
+    successRedirect: 'products',
+})
 
-userCtrl.createUser = (req,res) => {
-    let user = new User()
-    user.name = req.body.name
-    user.email = req.body.email
-    user.password = req.body.password
+//
+/*
+userCtrl.signup = (req, res) =>{
+    console.log(req.body)
+    res.send('Información RECIBIDA')
+};
+*/
+userCtrl.logout = (req, res) =>{
+    res.send('logout');
+};
 
-    user.save(err => {
-        if(err){
-            res.json(err)
-        } else {
-            res.json("successfully saved")
+
+
+userCtrl.createUser = async (req,res) => {
+
+     const { name, email, password } = req.body;
+    
+        const emailUser = await User.findOne({email: email});
+        if(emailUser){
+            console.log('Error, usuario ya existente');
+            res.redirect('user/singup');
+        }else{
+            const newUser = new User({ name, email,password });
+            newUser.password = await  newUser.encryptPassword(password)
+            await newUser.save();
+            console.log('Usuario creado con exito');
+            res.redirect('user/login');
         }
-    })
-}
+    
+
+};
 
 module.exports = userCtrl

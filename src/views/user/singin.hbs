@@ -8,27 +8,33 @@
                 <div class="col-lg-7 px-5 mt-4">
                     <p class="h2 font-weight-bold py-1">Bienvenido</p>
                     <p class="h5">Crea una nueva cuenta</p>
-                    <form>
+                    <form action="/user/singup" method="POST">
                         <div class="form-row">
                             <div class="col-lg-7">
+
                                 <input type="email" placeholder="Nombre completo" class="form-control my-2 p-3">
+
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
+
                                 <input type="email" placeholder="Correo electronico" class="form-control my-2 p-3">
+
                             </div>
                                 <div class="col-lg-7 ">
 
+
                                 <input type="password" placeholder="contraseña" class="form-control my-2 p-3 "
                                     id="myInput">
+
                                 <input type="checkbox" onclick="myFunction()"> Mostrar contraseña
 
                             </div>
                         </div>
                         <div class="form-row mt-3">
                             <div class="col-lg-7">
-                                <button type="button" class="btn btn-primary btn-lg btn-block my-3">Sing in</button>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block my-3">Crear cuenta</button>
                             </div>
                         </div>
                          <p>Ya tienes una cuenta? <a href="/user/login">Ingresa aqui</a> </p>
@@ -39,10 +45,7 @@
     </section>
 </div>
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 <script>
 function myFunction() {
   var x = document.getElementById("myInput");
@@ -52,9 +55,4 @@ function myFunction() {
     x.type = "password";
   }
 }
-<<<<<<< Updated upstream
-</script>
 
-=======
-</script>
->>>>>>> Stashed changes
