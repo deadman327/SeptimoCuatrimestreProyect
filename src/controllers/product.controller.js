@@ -3,7 +3,7 @@ const Product = require('../models/product')
 const productCtrl = {};
 
 productCtrl.renderProductForm = async (req,res) => {
-    res.send('render product');
+    //res.send('render product');   
     res.render('products/add-prod');
 };
 
@@ -35,6 +35,9 @@ productCtrl.createNewProduct = async (req,res) => {
 
 
 productCtrl.renderProduct = async (req,res) => {
+    res.render('products/all-products');
+
+    /*
     try {
         let products = await Product.find()
 
@@ -49,6 +52,7 @@ productCtrl.renderProduct = async (req,res) => {
         })
     }
     //res.send('render product');
+    */
 };
 
 

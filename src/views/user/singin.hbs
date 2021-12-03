@@ -9,21 +9,21 @@
                 <div class="col-lg-7 px-5 mt-5">
                     <p class="h2 font-weight-bold py-3">Bienvenido</p>
                     <p class="h5">Crea una nueva cuenta</p>
-                    <form>
+                    <form action="/user/singup" method="POST">
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="email" placeholder="Nombre completo" class="form-control my-2 p-4">
+                                <input type="text" name="name" placeholder="Nombre completo" class="form-control my-2 p-4">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <input type="email" placeholder="Correo electronico" class="form-control my-2 p-4">
+                                <input type="email" name="email" placeholder="Correo electronico" class="form-control my-2 p-4">
                             </div>
                         </div>
                         <div class="form-row my-2">
                             <div class="col-lg-7 ">
 
-                                <input type="password" placeholder="contraseña" class="form-control p-4 "
+                                <input type="password" name="password" placeholder="contraseña" class="form-control p-4 "
                                     id="myInput"><br><br>
                                 <input type="checkbox" onclick="myFunction()"> Mostrar contraseña
 
@@ -31,7 +31,7 @@
                         </div>
                         <div class="form-row">
                             <div class="col-lg-7">
-                                <button type="button" class="btn btn-primary btn-lg btn-block my-3">Sing in</button>
+                                <button type="submit" class="btn btn-primary btn-lg btn-block my-3">Crear cuenta</button>
                             </div>
                         </div>
                     </form>
