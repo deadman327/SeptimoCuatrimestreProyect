@@ -14,7 +14,7 @@ passport.use(new LocalStrategy({
         return done(null, false, { message: 'Usuario no encontrado'});
     }else{
         // Match Password User
-        const match = await user.matchPassword(password)
+        const match = await user.matchPassword(password);
         if(match){
             return done(null,user);
         } else{

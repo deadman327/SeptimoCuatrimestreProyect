@@ -6,12 +6,10 @@ const { createUser, loginUser, singinUser, signup, logout} = require('../control
 
 // Login FORM
 router.get('/user/login', loginUser);
-
 router.post('/user/login', singinUser);
 
 // Registrarse
 router.get('/user/singup', signup);
-//router.post('/user/singup', signup );
 router.post('/user/singup', createUser );
 
 // Cerrar

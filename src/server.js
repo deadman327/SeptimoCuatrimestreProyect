@@ -39,7 +39,7 @@ app.use(methodOverride('_method'))
 app.use(session({
     secret: 'secret',
     resave: true,
-    saveUnitializated: true
+    //saveUnitializated: true
 }));
 
 app.use(passport.initialize()); 
