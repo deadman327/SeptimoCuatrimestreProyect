@@ -4,30 +4,36 @@ const passport = require('passport');
 
 const userCtrl = {}
 
-// Form
+// Form Login
 userCtrl.loginUser = (req, res) =>{
     res.render('user/login')
 };
 
-// Registrarse form
+// Entrar - login
 userCtrl.singinUser = passport.authenticate('local',{
-    failureRedirect: 'login',
-    successRedirect: 'products',
-})
+    failureRedirect: '/user/login',
+    successRedirect: '/products',
+    failureFlash: true
+});
 
 //
-/*
+
+// Renderizar registro
 userCtrl.signup = (req, res) =>{
-    console.log(req.body)
-    res.send('Información RECIBIDA')
+    res.render('user/singin')
 };
-*/
+
+// Cerrar sesión
 userCtrl.logout = (req, res) =>{
-    res.send('logout');
+    req.logout();
+    delete req.user;
+    res.redirect('/')
+    console.log('Cerrar sesión');
+
 };
 
 
-
+// Crear cuenta
 userCtrl.createUser = async (req,res) => {
 
      const { name, email, password } = req.body;
@@ -35,13 +41,13 @@ userCtrl.createUser = async (req,res) => {
         const emailUser = await User.findOne({email: email});
         if(emailUser){
             console.log('Error, usuario ya existente');
-            res.redirect('user/singup');
+            res.redirect('/user/singup');
         }else{
             const newUser = new User({ name, email,password });
             newUser.password = await  newUser.encryptPassword(password)
             await newUser.save();
             console.log('Usuario creado con exito');
-            res.redirect('user/login');
+            res.redirect('/user/login');
         }
     
 
