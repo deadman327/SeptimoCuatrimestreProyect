@@ -13,22 +13,15 @@
         <li class="nav-item">
           <a class="nav-link" href="/about">Sobre nosotros</a>
         </li>
-        
         <li class="nav-item">
           <a class="nav-link" href="/products">Productos</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/user/singup">Registrarse</a>
-        </li>
-        {{/if}}
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
             data-bs-toggle="dropdown" aria-expanded="false">
             Categorias
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
             <!--#each products-->
             <li><a class="dropdown-item" href="#">"{Nombre Categoria 1}"</a></li>
             <li><a class="dropdown-item" href="#">"{Nombre Categoria 5}"</a></li>
@@ -43,7 +36,6 @@
         </li>
       </ul>
     </div>
-
     <ul class="navbar-nav ml-4">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUserLink" role="button" data-bs-toggle="dropdown"
@@ -53,8 +45,12 @@
           </span>
         </a>
         <ul class="dropdown-menu" aria-labelledby="navbarDropdownUserLink">
+          {{#if user}}
+          <li><a class="dropdown-item" href="/user/login">Cerrar Sesión</a></li>
+          {{else}}
           <li><a class="dropdown-item" href="/user/login">Login</a></li>
           <li><a class="dropdown-item" href="/user/singup">Registrarse</a></li>
+          {{/if}}
         </ul>
       </li>
     </ul>
