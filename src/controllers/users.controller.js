@@ -4,32 +4,36 @@ const passport = require('passport');
 
 const userCtrl = {}
 
-// Form
+// Form Login
 userCtrl.loginUser = (req, res) =>{
     res.render('user/login')
 };
 
-// Registrarse form
+// Entrar - login
 userCtrl.singinUser = passport.authenticate('local',{
     failureRedirect: '/user/login',
     successRedirect: '/products',
-})
+    failureFlash: true
+});
 
 //
 
+// Renderizar registro
 userCtrl.signup = (req, res) =>{
     res.render('user/singin')
 };
 
+// Cerrar sesión
 userCtrl.logout = (req, res) =>{
-    //req.logout();
-    req.session.destroy();
+    req.logout();
+    delete req.user;
+    res.redirect('/')
     console.log('Cerrar sesión');
 
 };
 
 
-
+// Crear cuenta
 userCtrl.createUser = async (req,res) => {
 
      const { name, email, password } = req.body;

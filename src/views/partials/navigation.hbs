@@ -16,18 +16,24 @@
         <li class="nav-item">
           <a class="nav-link" href="/about">Sobre nosotros</a>
         </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="/products">Productos</a>
+        </li>
+        {{#if user}}
+        <li class="nav-item">
+          <a class="nav-link" href="/user/logout">Cerrar Session</a>
+        </li>
+
+        {{else}}
         <li class="nav-item">
           <a class="nav-link" href="/user/login">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/user/singup">Registrarse</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/products">Productos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/user/logout">Cerrar Session</a>
-        </li>
+        {{/if}}
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Categorias

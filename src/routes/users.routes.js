@@ -4,9 +4,10 @@ const router = Router();
 
 const { createUser, loginUser, singinUser, signup, logout} = require('../controllers/users.controller');
 
-// Login
+// Login FORM
 router.get('/user/login', loginUser);
-// router.post('/user/login', singinUser);
+
+router.post('/user/login', singinUser);
 
 // Registrarse
 router.get('/user/singup', signup);
