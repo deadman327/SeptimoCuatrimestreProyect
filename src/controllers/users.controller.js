@@ -26,9 +26,9 @@ userCtrl.signup = (req, res) =>{
 // Cerrar sesión
 userCtrl.logout = (req, res) =>{
     req.logout();
-    delete req.user;
-    res.redirect('/')
     console.log('Cerrar sesión');
+    res.redirect('/');
+    
 
 };
 
