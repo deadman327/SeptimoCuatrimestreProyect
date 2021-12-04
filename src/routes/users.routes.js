@@ -1,5 +1,6 @@
 
 const { Router } = require('express')
+const upload = require("../middlewares/upload-photo")
 const router = Router();
 
 const { createUser, loginUser, singinUser, signup, logout} = require('../controllers/users.controller');
@@ -10,7 +11,7 @@ router.post('/user/login', singinUser);
 
 // Registrarse
 router.get('/user/singup', signup);
-router.post('/user/singup', createUser );
+router.post('/user/singup', upload.single('photo'), createUser );
 
 // Cerrar
 router.get('/user/logout', logout);

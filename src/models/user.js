@@ -8,7 +8,9 @@ const UserSchema = new Schema ({
     name: String,
     email: { type: String, required: true, unique: true},
     password: { type: String, required: true},
-    address: { type: Schema.Types.ObjectId, ref: 'Address'}
+    address: String,
+    about: String,
+    photo: String,
 })
 
 // Encriptado de contraseña

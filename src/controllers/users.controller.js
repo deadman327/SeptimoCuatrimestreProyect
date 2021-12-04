@@ -36,14 +36,15 @@ userCtrl.logout = (req, res) =>{
 // Crear cuenta
 userCtrl.createUser = async (req,res) => {
 
-     const { name, email, password } = req.body;
+    const { name, email, password, address, about } = req.body;
+    const photo = req.file.location
     
         const emailUser = await User.findOne({email: email});
         if(emailUser){
             console.log('Error, usuario ya existente');
             res.redirect('/user/singup');
         }else{
-            const newUser = new User({ name, email,password });
+            const newUser = new User({ name, email,password, address, about, photo });
             newUser.password = await  newUser.encryptPassword(password)
             await newUser.save();
             console.log('Usuario creado con exito');
