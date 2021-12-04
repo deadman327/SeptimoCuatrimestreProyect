@@ -57,19 +57,21 @@
                     magni
                     dolorem, error sint.</p>
 
+                {{#each products}}
                 <div class="container p-3 ma-3 align-center d-flex flex-wrap">
                     <div class="card" style="width: 18rem;">
                         <img src="https://i.ytimg.com/vi/nimkuj47yZk/maxresdefault.jpg">
                         <div class="card-body">
                             <h5 class="card-title">"{ title }"</h5>
 
-                            <h4 class="card-title">"{price }"</h4>
+                            <h4 class="card-title">"{ price }"</h4>
 
                             <a href="/" class="btn btn-primary">Ver mas</a>
 
                         </div>
                     </div>
                 </div>
+                {{/each}}
             </div>
         </section>
     </div>

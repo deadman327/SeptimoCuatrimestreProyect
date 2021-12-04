@@ -36,7 +36,7 @@ productCtrl.createNewProduct = async (req,res) => {
 
 
 productCtrl.renderProduct = async (req,res) => {
-    res.render('products/all-products');
+    res.render('/');
 
     /*
     try {

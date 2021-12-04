@@ -12,7 +12,7 @@ userCtrl.loginUser = (req, res) =>{
 // Entrar - login
 userCtrl.singinUser = passport.authenticate('local',{
     failureRedirect: '/user/login',
-    successRedirect: '/products',
+    successRedirect: '/',
     failureFlash: true
 });
 
@@ -37,14 +37,14 @@ userCtrl.logout = (req, res) =>{
 userCtrl.createUser = async (req,res) => {
 
     const { name, email, password, address, about } = req.body;
-    const photo = req.file.location
+    //const photo = req.file.location
     
         const emailUser = await User.findOne({email: email});
         if(emailUser){
             console.log('Error, usuario ya existente');
             res.redirect('/user/singup');
         }else{
-            const newUser = new User({ name, email,password, address, about, photo });
+            const newUser = new User({ name, email,password/*, address, about, photo */});
             newUser.password = await  newUser.encryptPassword(password)
             await newUser.save();
             console.log('Usuario creado con exito');

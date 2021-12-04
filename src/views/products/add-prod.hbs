@@ -5,31 +5,37 @@
                 <h3>Que vas a vender hoy?</h3>
             </div>
             <div class="card-body">
-                <form action="/products/new-prod" method="post" autofocus>
+                <form action="/products/new-prod" method="POST" autofocus>
                     <div class="mb-3">
                         <label for="" class="form-label">Nombre del producto</label>
-                        <input type="text" class="form-control" name="product_name" placeholder="Que vas a vender?">
+                        <input type="text" class="form-control" name="title" placeholder="Que vas a vender?">
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Precio del producto</label>
                         <div class="input-group">
                             <span class="input-group-text">$</span>
-                            <input type="text" class="form-control" name="product_price"
+                            <input type="text" class="form-control" name="price"
                                 oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="" class="form-label">Categotia</label>
-                        <input type="text" class="form-control" name="product_name" placeholder="Escoje una categoria">
+                        <label for="" class="form-label">Disponibles</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="stockQuantity"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="" class="form-label">Descripcion del producto</label>
-                        <textarea class="form-control" name="product_description" rows="4"
+                        <textarea class="form-control" name="description" rows="4"
                             placeholder="Una bonita cosa en venta que seguro alguien va a compar  :)"></textarea>
                     </div>
                     <div class="mb-3">
-                        <label for="" class="form-label">URL fotos</label>
-                        <textarea class="form-control" name="URLimage" placeholder="URL Imagen"></textarea>
+                       
+                        <label for="" class="form-label">Subir Foto</label>
+                        <input type="file" class="form-control-file" id="photo" name="photo">
+
+
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Publicar</button>
                     <button type="" class="btn btn-danger btn-block">Cancelar</button>

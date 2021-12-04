@@ -11,7 +11,7 @@ router.post('/user/login', singinUser);
 
 // Registrarse
 router.get('/user/singup', signup);
-router.post('/user/singup', upload.single('photo'), createUser );
+router.post('/user/singup', createUser );
 
 // Cerrar
 router.get('/user/logout', logout);
