@@ -17,6 +17,7 @@ productCtrl.createNewProduct = async (req,res) => {
         product.price = req.body.price
         product.photo = req.file.location
         product.stockQuantity = req.body.stockQuantity
+        product.owner = req.user.id;
         
         await product.save()
 
@@ -36,7 +37,14 @@ productCtrl.createNewProduct = async (req,res) => {
 
 
 productCtrl.renderProduct = async (req,res) => {
-    res.render('/');
+    try {
+        const products = await Product.find({owner: req.user.id})
+        console.log(products)
+        res.send(products)
+    } catch (err){
+        return err.message
+    }
+    //res.render('/');
 
     /*
     try {
