@@ -1,15 +1,18 @@
 
 <div class="container ma-4 p-5  align-center d-flex flex-wrap justify-content-around">
      <!--Dudas: tutotial no. 11 de fazt-->
-    {{#each products}}
+    <pre>
+        {{ product }}
+    </pre>
+
+    {{#each product }}
     <div class="card my-2" style="width: 18rem;">
-        <img src="https://i.ytimg.com/vi/nimkuj47yZk/maxresdefault.jpg">
+        <img src="">
         <div class="card-body">
-            <h5 class="card-title">"{ title }"</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+            <h5 class="card-title"> {{title}} </h5>
+            <p class="card-text"> descripción </p>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">"{ price }"</li>
+                <li class="list-group-item"> PRECIO </li>
             </ul>
 
 

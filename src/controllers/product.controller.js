@@ -37,6 +37,9 @@ productCtrl.createNewProduct = async (req,res) => {
 
 
 productCtrl.renderProduct = async (req,res) => {
+    const product = await Product.find();
+    res.render('products/all-products', { product });
+    /*
     try {
         const products = await Product.find({owner: req.user.id}).lean();
         console.log(products)
