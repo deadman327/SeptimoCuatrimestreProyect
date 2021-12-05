@@ -19,12 +19,13 @@
   },
   "homepage": "https://github.com/deadman327/SeptimoCuatrimestreProyect#readme",
   "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
     "aws-sdk": "^2.1037.0",
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.6",
     "express": "^4.17.1",
-    "express-handlebars": "^6.0.1",
+    "express-handlebars": "^3.1.0",
     "express-session": "^1.17.2",
     "jsonwebtoken": "^8.5.1",
     "method-override": "^3.0.0",
@@ -37,7 +38,7 @@
   },
   "devDependencies": {
     "dotenv": "^10.0.0",
-    "handlebars": "^4.7.7",
+    "handlebars": "^4.5.0",
     "nodemon": "^2.0.15",
     "npm-check-updates": "^12.0.2"
   }

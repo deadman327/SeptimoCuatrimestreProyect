@@ -57,21 +57,24 @@
                     magni
                     dolorem, error sint.</p>
 
-                {{#each products}}
                 <div class="container p-3 ma-3 align-center d-flex flex-wrap">
+
+                    {{#each products}}
                     <div class="card" style="width: 18rem;">
-                        <img src="https://i.ytimg.com/vi/nimkuj47yZk/maxresdefault.jpg">
+                        <img src="{{photo}}">
                         <div class="card-body">
-                            <h5 class="card-title">"{ title }"</h5>
+                            <h5 class="card-title">{{title}}</h5>
 
-                            <h4 class="card-title">"{ price }"</h4>
+                            <h4 class="card-title">${{price}}</h4>
+                        
 
-                            <a href="/" class="btn btn-primary">Ver mas</a>
+                            <a href="/products/edit/{{_id}}" class="btn btn-primary">Ver mas</a>
 
                         </div>
                     </div>
+
+                    {{/each}}
                 </div>
-                {{/each}}
             </div>
         </section>
     </div>
@@ -84,14 +87,3 @@
 
 
 
-
-<script>
-    function myFunction() {
-        var x = document.getElementById("myInput");
-        if (x.type === "password") {
-            x.type = "text";
-        } else {
-            x.type = "password";
-        }
-    }
-</script>

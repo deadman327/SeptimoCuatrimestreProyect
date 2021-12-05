@@ -38,7 +38,7 @@ productCtrl.createNewProduct = async (req,res) => {
 
 productCtrl.renderProduct = async (req,res) => {
     try {
-        const products = await Product.find({owner: req.user.id})
+        const products = await Product.find({owner: req.user.id}).lean();
         console.log(products)
         res.send(products)
     } catch (err){
@@ -67,7 +67,7 @@ productCtrl.renderProduct = async (req,res) => {
 productCtrl.renderProductIndex = () => {
 
     try {
-        let products = Product.find()
+        let products = Product.find().lean();
         return products
     } catch (err){
         return err.message
@@ -79,10 +79,7 @@ productCtrl.renderEditForm = async (req,res) => {
     try {
         let products = await Product.findOne( {_id: req.params.id} )
 
-        res.json({
-            success: true,
-            products
-        })
+        res.render('products/edit-prod.hbs');
     } catch (err){
         res.status(500).jsoon({
             success: false,
