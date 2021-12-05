@@ -20,7 +20,7 @@ productCtrl.createNewProduct = async (req,res) => {
         product.owner = req.user.id;
         
         await product.save()
-
+        req.flash('success_msg', 'Producto agregado correctamente');
         res.redirect('/');
 
 
@@ -108,12 +108,14 @@ productCtrl.updateProduct = async (req,res) => {
     const {title, description, price, stockQuantity} = req.body;
     const photo = req.file.location;
     await Product.findByIdAndUpdate(req.params.id, {title, description, price, stockQuantity, photo})
-    res.send('update product');
+    req.flash('success_msg', 'Producto actualizado con exito');
+    res.redirect('/products');
 };
 
 productCtrl.deleteProduct = async (req,res) => {
     await Product.findByIdAndDelete(req.params.id);
-    res.send('delete Product');
+    req.flash('success_msg', 'Producto eliminado con exito');
+    res.redirect('/products');
 };
 
 module.exports = productCtrl;
