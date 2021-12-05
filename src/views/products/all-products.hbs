@@ -1,22 +1,18 @@
 
 <div class="container ma-4 p-5  align-center d-flex flex-wrap justify-content-around">
      <!--Dudas: tutotial no. 11 de fazt-->
-    <pre>
-        {{ product }}
-    </pre>
 
     {{#each product }}
     <div class="card my-2" style="width: 18rem;">
-        <img src="">
+        <img src=" {{photo}} ">
         <div class="card-body">
             <h5 class="card-title"> {{title}} </h5>
-            <p class="card-text"> descripción </p>
+            <p class="card-text"> {{ description }} </p>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"> PRECIO </li>
+                <li class="list-group-item"> $ {{ price }} </li>
             </ul>
 
-
-            <form action="/products/delete/{{_id}}?_method=DELETE" method="DELETE">
+            <form action="/products/delete/{{_id}}?_method=DELETE" method="POST">
                 <a href="/products/edit/{{_id}}" class="btn btn-primary">Editar</a>
                 <input type="hidden" name="_method" value="DELETE">
                 <button type="submit" class="btn bg-danger btn-block text-white">Borrar</button>

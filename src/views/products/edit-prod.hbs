@@ -1,3 +1,52 @@
+
+<div class="container m-5 p-5 d-flex align-items-center justify-content-center">
+    <div class=" col-md-8 align-items-center justify-content-center align-self-center">
+        <div class=" card ">
+            <div class="card-header">
+                <h3>Actualiza tu producto</h3>
+            </div>
+            <div class="card-body">
+                <form action="/products/edit/{{id}}" method="POST" enctype='multipart/form-data' autofocus>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Nombre del producto</label>
+                        <input type="text" class="form-control" name="title" placeholder="Que vas a vender?">{{producte.name}}
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Precio del producto</label>
+                        <div class="input-group">
+                            <span class="input-group-text">$</span>
+                            <input type="text" class="form-control" name="price"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">{{price}}
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Disponibles</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="stockQuantity"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Descripcion del producto</label>
+                        <textarea class="form-control" name="description" rows="4"
+                            placeholder="Una bonita cosa en venta que seguro alguien va a compar  :)"></textarea>
+                    </div>
+                    <div class="mb-3">
+                       
+                        <label for="" class="form-label">Subir Foto</label>
+                        <input type="file" class="form-control-file photo" id="photo" name="photo">
+
+
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Publicar</button>
+                    <button type="" class="btn btn-danger btn-block">Cancelar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
 <div class="container m-5 p-5 d-flex align-items-center justify-content-center">
     <div class=" col-md-8 align-items-center justify-content-center align-self-center">
         <div class=" card ">

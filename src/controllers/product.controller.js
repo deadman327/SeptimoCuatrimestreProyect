@@ -37,7 +37,7 @@ productCtrl.createNewProduct = async (req,res) => {
 
 
 productCtrl.renderProduct = async (req,res) => {
-    const product = await Product.find();
+    const product = await Product.find({owner: req.user.id });
     res.render('products/all-products', { product });
     /*
     try {
@@ -109,9 +109,11 @@ productCtrl.renderProductByID= async (req,res) => {
 
 productCtrl.updateProduct = async (req,res) => {
     const {title, description, price, stockQuantity} = req.body;
+    console.log(req.body);
     const photo = req.file.location;
     await Product.findByIdAndUpdate(req.params.id, {title, description, price, stockQuantity, photo})
     req.flash('success_msg', 'Producto actualizado con exito');
+    console.log('producto actualizado')
     res.redirect('/products');
 };
 
