@@ -21,10 +21,10 @@ productCtrl.createNewProduct = async (req,res) => {
         
         await product.save()
 
-        res.json({
-            status: true,
-            message: "Successfully saved"
-        })
+        res.redirect('/');
+
+
+       
     }catch (err) {
             res.status(500).json({
                 success: false,
