@@ -2,7 +2,7 @@ const { Router } = require('express')
 const upload = require("../middlewares/upload-photo")
 const router = Router();
 
-const { renderProductForm, createNewProduct, renderProduct, renderEditForm, updateProduct, deleteProduct } = require('../controllers/product.controller');
+const { renderProductForm, createNewProduct, renderProduct, renderEditForm, updateProduct, deleteProduct, renderProductByID } = require('../controllers/product.controller');
 
 //new product
     router.get('/products/add-prod', renderProductForm );
@@ -12,9 +12,12 @@ const { renderProductForm, createNewProduct, renderProduct, renderEditForm, upda
 
 router.get('/products', renderProduct );
 
+// render one product
+router.get('/products/:id', renderProductByID );
+
 //edit product
 router.get('/products/edit/:id', renderEditForm );
-router.put('/products/edit/:id', updateProduct );
+router.put('/products/edit/:id', upload.single('photo'), updateProduct );
 
 //delete product
 

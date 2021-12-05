@@ -89,11 +89,30 @@ productCtrl.renderEditForm = async (req,res) => {
     //res.send('render edit product');
 };
 
-productCtrl.updateProduct = (req,res) => {
+productCtrl.renderProductByID= async (req,res) => {
+    try {
+        let products = await Product.findOne( {_id: req.params.id} )
+
+        res.send(products)
+        //res.render('products/edit-prod.hbs');
+    } catch (err){
+        res.status(500).jsoon({
+            success: false,
+            message: err.message
+        })
+    }
+    //res.send('render edit product');
+};
+
+productCtrl.updateProduct = async (req,res) => {
+    const {title, description, price, stockQuantity} = req.body;
+    const photo = req.file.location;
+    await Product.findByIdAndUpdate(req.params.id, {title, description, price, stockQuantity, photo})
     res.send('update product');
 };
 
-productCtrl.deleteProduct = (req,res) => {
+productCtrl.deleteProduct = async (req,res) => {
+    await Product.findByIdAndDelete(req.params.id);
     res.send('delete Product');
 };
 
