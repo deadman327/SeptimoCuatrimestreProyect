@@ -54,4 +54,18 @@ userCtrl.createUser = async (req,res) => {
 
 };
 
+// Usuario por ID
+userCtrl.getUserByID = async (req,res) => {
+    try {
+        let user = await User.findOne( {_id: req.body.owner} ).lean();
+        res.render('products/details', {user});
+    } catch (err){
+        res.status(500).jsoon({
+            success: false,
+            message: err.message
+        })
+    }
+};
+
+
 module.exports = userCtrl
