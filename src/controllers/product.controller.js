@@ -21,7 +21,7 @@ productCtrl.createNewProduct = async (req,res) => {
         
         await product.save()
         req.flash('success_msg', 'Producto agregado correctamente');
-        res.redirect('/');
+        res.redirect('/products');
 
 
        
@@ -80,9 +80,9 @@ productCtrl.renderProductIndex = () => {
 
 productCtrl.renderEditForm = async (req,res) => {
     try {
-        let products = await Product.findOne( {_id: req.params.id} )
+        let products = await Product.findOne( {_id: req.params.id} ).lean();
 
-        res.render('products/edit-prod.hbs');
+        res.render('products/edit-prod', {products});
     } catch (err){
         res.status(500).jsoon({
             success: false,
@@ -94,10 +94,9 @@ productCtrl.renderEditForm = async (req,res) => {
 
 productCtrl.renderProductByID= async (req,res) => {
     try {
-        let products = await Product.findOne( {_id: req.params.id} )
+        let products = await Product.findOne( {_id: req.params.id} ).lean();
 
-        res.send(products)
-        //res.render('products/edit-prod.hbs');
+        res.render('products/details', {products});
     } catch (err){
         res.status(500).jsoon({
             success: false,
@@ -108,9 +107,12 @@ productCtrl.renderProductByID= async (req,res) => {
 };
 
 productCtrl.updateProduct = async (req,res) => {
+    console.log(req.body);
     const {title, description, price, stockQuantity} = req.body;
     console.log(req.body);
+    console.log('msg before');
     const photo = req.file.location;
+    console.log('msg after');
     await Product.findByIdAndUpdate(req.params.id, {title, description, price, stockQuantity, photo})
     req.flash('success_msg', 'Producto actualizado con exito');
     console.log('producto actualizado')

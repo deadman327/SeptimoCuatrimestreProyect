@@ -47,29 +47,30 @@
 
                 <hr>
 
-                <p class="h5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni facere provident minus
-                    aperiam
-                    voluptates nemo
-                    corrupti impedit consequuntur quod quidem. <br> <br>
+                <p class="h5">Publica, y vende productos de todo tipo en e-Bazar, un sitio en el que las personas pueden
+                    encontrar facilmente algo nuevo que les interese o aquello que estan buscando y hasta con un poco
+                    de suerte algo mass.... <br> <br>
 
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque id eum pariatur. Non expedita dicta
-                    delectus
-                    magni
-                    dolorem, error sint.</p>
-
-                <div class="container p-3 ma-3 align-center d-flex flex-wrap">
+                    Que estas esperando? Ingresa a e-Bazar con una cuenta y comienza a vender todo lo que te imagines
+                </p>
+                <br>
+                <div class="container p-3 ma-3  d-flex align-center  flex-wrap">
 
                     {{#each products}}
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{photo}}">
-                        <div class="card-body">
-                            <h5 class="card-title">{{title}}</h5>
+                    <div class="card mx-2 my-2 d-flex justify-content-between"
+                        style="width: 16rem; border: solid black 1px">
+                        <div class="cajaprod">
+                            <img class="imgprod" src="{{photo}}">
+                        </div>
+                        <div class="card-body d-flex flex-column align-items-baseline">
+                            <h5 class="card-title">{{title}}</h5> <br>
 
                             <h4 class="card-title">${{price}}</h4>
 
-                            <a href="/products/edit/{{_id}}" class="btn btn-primary">Ver mas</a>
 
                         </div>
+                        <a href="/products/{{_id}}" class="btn btn-primary btnprod ">Ver mas</a>
+
                     </div>
 
                     {{/each}}
@@ -78,11 +79,3 @@
         </section>
     </div>
 </section>
-
-
-
-
-
-
-
-

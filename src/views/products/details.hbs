@@ -5,27 +5,24 @@
 
                 <div class="col-lg-7 d-flex align-content-center align-items-center flex-wrap">
                     <div class="caja ">
-                        <img src="https://i.pinimg.com/originals/6d/6d/a1/6d6da1386014c5a3d5877a14488eeb5d.jpg ">
+                        <img src="{{products.photo}} ">
                     </div>
                 </div>
 
                 <div class="col-lg-5 px-5 my-4">
                     <form clas="" action="#" method="post" autofocus>
                         <div class="mb-3">
-                            <label for="" class="h3 font-weight-bold">Nombre del producto</label>
+                            <label for="" class="h3 font-weight-bold">{{products.title}}</label>
                         </div>
                         <div class="mb-3">
-                            <span class="h5">$ 0000.00</span>
+                            <span class="h5">${{products.price}}</span>
                         </div>
                         <div class="mb-3">
                             <label for="" class="form-label"> <b>Descripción:</b> </label>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe autem quasi, assumenda
-                                consequuntur,nspernatur, quaerat magni alias maiores voluptate illo dolorum distinctio
-                                et? Nulla non possimus deserunt, repudiandae distinctio numquam animi, rem,
-                                reprehenderit sit molestias fugit? Deleniti, animi. Tempore, placeat repellendus.</p>
+                            {{products.description}}
                         </div>
                         <div class="mb-3">
-                            <span class="h4">Valoacion: <b>5/5</b></span>
+                            <span class="h4">Valoracion: <b>5/5</b></span>
                         </div>
                         <button type="submit" class="btn btn-primary btn-block">Contactar</button>
                     </form>
@@ -35,4 +32,9 @@
             </div>
         </div>
     </section>
+
+    <div class="pa-4 ma-4">
+        <a class="btn btn-primary ma-4 pa-4 btnvolver" href="/">volver</a>
+    </div>
+
 </div>
