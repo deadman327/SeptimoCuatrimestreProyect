@@ -99,7 +99,7 @@ productCtrl.renderProductByID= async (req,res) => {
         const user = await getUserByID(products.owner)
         console.log(user.email)
 
-        res.render('products/details', {products}, {user});
+        res.render('products/details', {products, user});
     } catch (err){
         res.status(500).jsoon({
             success: false,
