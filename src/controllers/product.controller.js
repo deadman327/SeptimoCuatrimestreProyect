@@ -1,5 +1,5 @@
 const Product = require('../models/product')
-
+const { getUserByID } = require('../controllers/users.controller');
 const productCtrl = {};
 
 productCtrl.renderProductForm = async (req,res) => {
@@ -68,7 +68,7 @@ productCtrl.renderProduct = async (req,res) => {
 };
 
 productCtrl.renderProductIndex = () => {
-
+   
     try {
         let products = Product.find().lean();
         return products
@@ -93,10 +93,13 @@ productCtrl.renderEditForm = async (req,res) => {
 };
 
 productCtrl.renderProductByID= async (req,res) => {
+    
     try {
         let products = await Product.findOne( {_id: req.params.id} ).lean();
+        const user = await getUserByID(products.owner)
+        console.log(user.email)
 
-        res.render('products/details', {products});
+        res.render('products/details', {products}, {user});
     } catch (err){
         res.status(500).jsoon({
             success: false,
